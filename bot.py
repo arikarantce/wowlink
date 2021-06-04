@@ -19,7 +19,7 @@ bot = Client('gplink bot',
 async def start(bot, message):
     await message.reply(
         f"**Hi {message.chat.first_name}!**\n\n"
-        "I'm GPlink bot. Just send me link and get short link")
+        "I'm Earnclicks bot. Just send me link and get short link")
 
 
 @bot.on_message(filters.regex(r'https?://[^\s]+') & filters.private)
@@ -33,7 +33,7 @@ async def link_handler(bot, message):
 
 
 async def get_shortlink(link):
-    url = 'https://wowlinks.me/api'
+    url = 'https://earnclicks.me/api'
     params = {'api': API_KEY, 'url': link}
 
     async with aiohttp.ClientSession() as session:
